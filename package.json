@@ -26,7 +26,8 @@
     "coffee-script": "~1.7.1",
     "hapi": "^6.0.0",
     "lab": "^3.2.1",
-    "mocha": "^1.20.1"
+    "mocha": "^1.20.1",
+    "stylus": "*"
   },
   "homepage": "https://github.com/alexgorbatchev/hapi-stylus",
   "bugs": "https://github.com/alexgorbatchev/hapi-stylus/issues",
