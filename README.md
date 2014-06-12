@@ -26,7 +26,7 @@ In a server:
     server.pack.register({
       plugin: require('hapi-stylus'),
       options: {
-        home: __dirname,
+        home: __dirname + "/styles",
         route: "/styles/{filename*}" // default
       }
     }, done);
