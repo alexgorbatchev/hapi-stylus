@@ -1,0 +1,38 @@
+{
+  "name": "hapi-stylus",
+  "version": "1.0.0",
+  "description": "A basic Stylus rendering plugin for hapi.",
+  "keywords": [
+    "hapi",
+    "plugin",
+    "css",
+    "stylus"
+  ],
+  "main": "./lib/hapi-stylus.js",
+  "scripts": {
+    "test": "mocha test/*.spec.coffee",
+    "pretest": "coffee --bare --output ./lib --compile ./src/*.coffee"
+  },
+  "author": {
+    "name": "Alex Gorbatchev",
+    "url": "https://github.com/alexgorbatchev"
+  },
+  "peerDependencies": {
+    "stylus": "*"
+  },
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "coffee-errors": "~0.8.6",
+    "coffee-script": "~1.7.1",
+    "hapi": "^6.0.0",
+    "lab": "^3.2.1",
+    "mocha": "^1.20.1"
+  },
+  "homepage": "https://github.com/alexgorbatchev/hapi-stylus",
+  "bugs": "https://github.com/alexgorbatchev/hapi-stylus/issues",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/alexgorbatchev/hapi-stylus.git"
+  },
+  "license": "MIT"
+}
