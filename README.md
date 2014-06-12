@@ -52,7 +52,7 @@ Path in which all styles files are located. Plugin will make all attempts to avo
 
 ### route
 
-Defaults to `/styles/{filename*}`. All paths matching this route will be considered CSS files. `.css` extension gets replaced with `.styl`.
+Defaults to `/styles/{filename*}`. All paths matching this route will be considered CSS files. `.css` extension gets replaced with `.styl`. Also, `filename` has to be present in the route.
 
 ## Notes
 
