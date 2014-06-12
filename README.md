@@ -43,6 +43,8 @@ In a plugin:
       });
       next();
     };
+    
+With the above configuration you can now `GET /styles/foo.css` or `GET /styles/sub/bar.css` which will look for `__dirname/styles/foo.styl` and `__dirname/styles/sub/bar.styl` respectively.
 
 ## Options
 
