@@ -28,5 +28,8 @@ register = (plugin, {route, home}, next) ->
 
   next()
 
-register.attributes = pkg: require '../package.json'
+register.attributes =
+  multiple: yes
+  pkg: require '../package.json'
+
 module.exports = {register}
