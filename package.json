@@ -23,10 +23,10 @@
   "devDependencies": {
     "chai": "^1.9.1",
     "coffee-errors": "~0.8.6",
-    "coffee-script": "~1.7.1",
-    "hapi": "^6.0.0",
+    "coffee-script": "^1.9.2",
+    "hapi": "^8.4.0",
     "lab": "^3.2.1",
-    "mocha": "^1.20.1",
+    "mocha": "^2.2.4",
     "stylus": "*"
   },
   "homepage": "https://github.com/alexgorbatchev/hapi-stylus",
@@ -35,5 +35,8 @@
     "type": "git",
     "url": "git://github.com/alexgorbatchev/hapi-stylus.git"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "boom": "^2.7.1"
+  }
 }
