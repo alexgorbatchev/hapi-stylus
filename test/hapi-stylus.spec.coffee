@@ -5,6 +5,7 @@ Hapi = require 'hapi'
 
 GLOBAL.expect = chai.expect
 plugin = require '../src/hapi-stylus'
+path = require 'path'
 
 describe 'simple hapi-stylus usage', ->
   server = null
@@ -66,7 +67,15 @@ describe 'hapi-stylus configuration', ->
       , ->
           server.inject '/styles/fixture.css', ({statusCode, result}) ->
             expect(statusCode).to.equal 200
-            expect(result).to.equal '\n/* line 3 : /Users/martin/Private/projects/hapi-stylus/test/fixture.styl */\n\n/* line 1 : /Users/martin/Private/projects/hapi-stylus/node_modules/stylus/lib/functions/index.styl */\n\n/* line 2 : /Users/martin/Private/projects/hapi-stylus/test/fixture.styl */\n.text{color:#f00}'
+            expect(result).to.equal """
+              
+              /* line 3 : #{path.resolve(__dirname, 'fixture.styl')} */
+
+              /* line 1 : #{path.resolve(__dirname, '../node_modules/stylus/lib/functions/index.styl')} */
+
+              /* line 2 : #{path.resolve(__dirname, 'fixture.styl')} */
+              .text{color:#f00}
+              """
             done()
 
   it 'allows adding a prefix', (done) ->
