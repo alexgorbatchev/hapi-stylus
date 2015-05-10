@@ -3,7 +3,7 @@ fs     = require 'fs'
 path   = require 'path'
 Boom   = require 'boom'
 
-register = (plugin, {route, home, compress, cache, ending, linenos, prefix}, next) ->
+register = (plugin, {route, home, compress, cache, ending, linenos, prefix, use}, next) ->
   handler = (request, reply) ->
     {filename} = request.params
     filename = path.normalize filename
@@ -24,6 +24,10 @@ register = (plugin, {route, home, compress, cache, ending, linenos, prefix}, nex
         cache    : if cache? then cache else true
         linenos  : if linenos? then linenos else false
       )
+
+      if Array.isArray(use)
+        for func in use when typeof func == 'function'
+          style.use(func())
 
       style.render (err, css) ->
         return reply(Boom.badImplementation(err)) if err?
