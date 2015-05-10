@@ -1,6 +1,6 @@
 {
   "name": "hapi-stylus",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "A basic Stylus rendering plugin for hapi.",
   "keywords": [
     "hapi",
@@ -21,16 +21,18 @@
     "stylus": "*"
   },
   "devDependencies": {
-    "chai": "^1.9.1",
+    "chai": "^2.3.0",
     "coffee-errors": "~0.8.6",
     "coffee-script": "^1.9.2",
     "hapi": "^8.4.0",
-    "lab": "^3.2.1",
     "mocha": "^2.2.4",
+    "nib": "^1.1.0",
     "stylus": "*"
   },
   "homepage": "https://github.com/alexgorbatchev/hapi-stylus",
-  "bugs": "https://github.com/alexgorbatchev/hapi-stylus/issues",
+  "bugs": {
+    "url": "https://github.com/alexgorbatchev/hapi-stylus/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/alexgorbatchev/hapi-stylus.git"
