@@ -90,4 +90,18 @@ describe 'hapi-stylus configuration', ->
             expect(result).to.equal '.foo-text{color:#f00}'
             done()
 
+  it 'allows using plugins', (done) ->
+    server.register
+      register: plugin
+      options:
+        home: __dirname
+        use: [
+          require('nib')
+        ]
+      , ->
+          server.inject '/styles/fixture.nib.css', ({statusCode, result}) ->
+            expect(statusCode).to.equal 200
+            expect(result).to.equal '.text{color:#f00;width:5px;height:5px}'
+            done()
+
   afterEach (done) -> server.stop done
