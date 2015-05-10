@@ -23,27 +23,37 @@ A basic [Stylus] plugin for [hapi].
 
 In a server:
 
-    server.pack.register({
-      plugin: require('hapi-stylus'),
-      options: {
-        home: __dirname + "/styles",
-        route: "/styles/{filename*}" // default
-      }
-    }, done);
+```javascript
+server.pack.register({
+  plugin: require('hapi-stylus'),
+  options: {
+    home      : __dirname + "/styles",
+    route     : "/styles/{filename*}", // default
+    compress  : true,                  // default
+    cache     : true,                  // default
+    extension : '.styl',               // default
+    linenos   : false,                 // default
+    prefix    : 'css-prefix',
+    use       : [stylusPlugin, stylusPlugin]
+  }
+}, done);
+```
 
 In a plugin:
 
-    var register = function(plugin, options, next) {
-      plugin.register({
-        plugin: require('hapi-stylus'),
-        options: {
-          home: __dirname + "/styles",
-          route: "/styles/{filename*}" // default
-        }
-      });
-      next();
-    };
-    
+```javascript
+var register = function(plugin, options, next) {
+  plugin.register({
+    plugin: require('hapi-stylus'),
+    options: {
+      home: __dirname + "/styles",
+      route: "/styles/{filename*}" // default
+    }
+  });
+  next();
+};
+```
+
 With the above configuration you can now `GET /styles/foo.css` or `GET /styles/sub/bar.css` which will look for `__dirname/styles/foo.styl` and `__dirname/styles/sub/bar.styl` respectively.
 
 ## Options
